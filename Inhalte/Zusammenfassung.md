@@ -32,10 +32,38 @@ Den Baum haben wir in der Modellierung ersetzt durch den **Markow Entscheidungsp
 - Das CSP ist im Grunde genommen nicht sequenziell sondern per Definition ein Problem wo man sagt: "Geben sie mir eine Lösung!" und die Lösung ist ein assignment zu allen Variablen, aber um eine Entscheidung zu finden ist der Standardansatz das Sequenzialisieren - **sequential assignment**. 
 - Das mag zwar nicht wichtig erscheinen aber es ist ein ziemlich konzeptioneller Punkt, denn anfangs ist es nicht klar, dass man das tun muss. Es gäbe auch andere Methodiken, die eher auf (parallelen) Optimierungs- oder Interferenzprozessen basieren, aber der Standardansatz ist, das Problem sequenziell zu zerlegen. Das bedeutet, dass man zum Beispiel Werte der Karte sequenziell zuweist. Hier ist die Lösung **Backtracking** und **Treesearch**. 
 - Methodisch macht man dann Constraint Propagation, was sehr eng mit dynamischem Programmieren verwandt ist, weil bei CP die Funktion, mit der wir jetzt die Variablen festlegen, die Indikatorfunktion ist, die aussagt welche Belegungen überhaupt noch erlaubt sind. 
-- Die Constraint Satisfaction nutzt die Constraints der benachbarten Variablen um die Belegungen aus dem Raum der möglichen Werte herauszustreichen, um hreauszufinden welche Variablen für dieses Feld denn noch möglich sind. Diese Propagation ist sehr ähnlich zum dynamischen Programmieren.
+- Die Constraint Satisfaction nutzt die Constraints der benachbarten Variablen um die Belegungen aus dem Raum der möglichen Werte herauszustreichen, um herauszufinden welche Variablen für dieses Feld denn noch möglich sind. Diese Propagation ist sehr ähnlich zum dynamischen Programmieren.
 
 ### Graphical Models
 - Message parsing, insbesondere auf Bäumen 
+- "Loopy"
+- Es gibt auch andere Möglichkeiten, Wahrscheinlichkeiten zu schätzen, wenn der Graph nicht als Baum darstellbar ist
+- Als Spezialfall: HMMs
+- Wichtig ist: Man merkt, das (hinbug??) Modelle ein Spezialfall sind von graphischen Modellen ist
+- Von der Problemstellung sind graphische Modelle nichts anderes als constraint satisfaction probleme, aber propabilistisch. Dementsprechend ist von der Methodik her Message Parsing nichts anderes als eine propabilistische Version von Constraint Propagation, wo bei CP wir Indikatiorfunktionen hatten, die zu jeder Domain sagen, ob ein Wert möglich ist oder nicht (Eine richtige binäre Funktion mit nur zwei möglichen Outputs), und das übersetze ich in Messages, in reelle Zahlen, die man aufmultipliziert um rauszufinden was denn wahrscheinlich vorliegt. 
+
+### Machine Learning
+*war fast nicht in der Vorlesung
+
+- Machine Learning als Spezialfall von graphischen Modellen betrachtet, also als propabilistische Interferenz
+
+``` 
+            P(D|f) * P(f)       
+P(f|D) =  ----------------- 
+                P(D)
+``` 
+- Machine Learning kann genutzt werden um bei Reinforcement Learning die value- oder Q-Funktion zu bestimmen oder ein `P(s'|s,a)` oder `R(s|a)` zu lernen
+
+## Überblick:
+Type          | sequential Decisions   | Interference
+------------- | ---------------------- | ------------  
+deterministic | Search                 | (Constraint Propagation?)
+propabilistic | Propabilistic          | Graphical Models
+learning      | Reinforcement Learning | Machine Learning
 
 
-Telegram Memo @ 15:00
+## Hinweise zum Skript
+- Generell ist das Inhaltsverzeichnis wichtig
+
+
+Telegram Memo @ 31:00
