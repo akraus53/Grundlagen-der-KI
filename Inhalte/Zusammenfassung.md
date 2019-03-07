@@ -1,4 +1,4 @@
-# Übersicht: 04.02.2019
+# Hinweise zur Vorbereitung auf die Klausur (MT040219)
 
 ## Mitschrieb zum Schaubild 
 ### Search
@@ -53,6 +53,7 @@ P(f|D) =  -----------------
                 P(D)
 ``` 
 - Machine Learning kann genutzt werden um bei Reinforcement Learning die value- oder Q-Funktion zu bestimmen oder ein `P(s'|s,a)` oder `R(s|a)` zu lernen
+- Die Gleichungen in einem (2-layer) NN können in der Klausur abgefragt werden.
 
 ## Überblick:
 Type          | sequential Decisions   | Interference
@@ -64,6 +65,44 @@ learning      | Reinforcement Learning | Machine Learning
 
 ## Hinweise zum Skript
 - Generell ist das Inhaltsverzeichnis wichtig
+- `**` bedeutet, dass etwas nicht Klausurrelevant ist 
 
+### Suche: Breitensuche/Tiefensuche/iter.Tiefensuche/A*
+- Wissen, was die Algorythmen machen und in der Lage sein, sie im Kopf durchzugehen
+- Die Komplexitäten der Algorythmen kennen 
+- Wissen, was eine **admissive heuristic** ist
+- Bei gegebener Funktion angeben, ob es sich um eine admissive heuristic handelt
 
-Telegram Memo @ 31:00
+### Wahrscheinlichkeiten: 
+- Standardpolynomsatz (?)
+- Was ist eine Marginalwahrscheinlichkeit?
+- Was ist eine Konditionalwahrscheinlichkeit?
+- Beides auch mit 3 Variablen
+- Bayessche Regeln verstehen
+- "Verbundwahrscheinlichkeit"
+
+### Bandits, MCTS & Games:
+- Upper Confidence Bounds
+- Monte Carlo Tree Search
+
+### Dynamisches Programmieren
+- Markov Entscheidungsprozesse auf jeden Fall, mini kleines Problem wo man Value Iteration 3 mal durchführen muss
+- Value und Q-Iteration muss man wissen
+
+### Reinforcement Learning
+- "Konzeptionell ist das Wichtigste überhaupt bei Reinforcement Learning, dass man die Grundlage von Reinforcement Learning versteht: Dass man Q-Learning ableiten kann durch eine stochastische Varianz und dynamisches Normieren, und das impliziert auch den Konvergenzbeweis von Q-Learning" --> kann aber in der Klausur nicht getestet werden.
+- "Ein Agent läuft in der Welt rum, wie oft müsste er zufällig bis zum Ziel kommen bis er am Start eine Value != 0 hat (einfacher als in Übung)
+- Epsilon-greedy Exploration sollte man wissen
+
+###  Constraint Satisfaction Problems
+- Backtracking und die Heuristiken, die wir gelernt haben.
+- "Sie sind in einer gegebenen Situation, die sie mit Backtracking/CSP lösen. Welche Variablen picken sie sich raus?" --> testet Variable Order (Min. Remaining Value etc.)
+- Constraint Propagation: "Hier sind die Variablen, die sie kennen und die Constraints, die sie erfüllen, angenommen Sie führen jetzt Constraint Porpagation aus ohne Backtracking. Wohin konvergiert das? Was sind die verbleibenden Domains und Wertelängen?"
+
+### Graphical Models
+- "Hier ist ein kleines graphisches Modell, berechnen die die Posterior von x gegeben dieser Beobachtung." --> Message Parsing zum Beispiel
+- Definition von "Unabhängig": "Gegebene Wahrscheinlichkeitstabelle. Frage: Sind die zwei Variablen unabhängig?" 
+
+### Neuronale Netze
+- Die ganz grundliegende Definition hinter NNs.
+- Ausrechnen einer partiellen Ableitung
