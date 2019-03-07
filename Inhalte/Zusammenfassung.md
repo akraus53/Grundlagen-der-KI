@@ -3,7 +3,7 @@
 ## Mitschrieb zum Schaubild 
 ### Search
 - Wichtig ist hier die **Tree Search**
-- Unser Entscheidungsprzess ist **deterministisch**, also "unfrei"
+- Unser Entscheidungsprozess ist **deterministisch**, also "unfrei"
 - Projiziert auf ein Spiel ist das Gegenüber/der Gegner nicht deterministisch, daher haben wir ihn durch 
 einen deterministischen Gegner ersetzt. Dieser Gegner war Min, als wir über MiniMax geredet haben (der böseste mögliche Gegner). 
 
