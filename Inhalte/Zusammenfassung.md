@@ -1,5 +1,7 @@
 # Hinweise zur Vorbereitung auf die Klausur (MT040219)
 
+![Overview](Bilder/AI_overview.jpg)
+
 ## Mitschrieb zum Schaubild 
 ### Search
 - Wichtig ist hier die **Tree Search**
