@@ -11,6 +11,6 @@ ____    __    ____  __  .______
 ## Inhalte
 [Zusammenfassung](Inhalte/Zusammenfassung.md)
 
-1. [Einführung](Inhalte/Einführung.md)
+1. [Einführung](Inhalte/Einfuehrung.md)
 2. [Search](Inhalte/Search.md)
 3. [Propabilities](Inhalte/Propabilities.md)
