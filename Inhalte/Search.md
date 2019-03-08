@@ -5,6 +5,41 @@
 - Im Wahrscheinlichkeitsraum sind Baumsuchen ein Spezialfall von Monte-Carlo-Methoden um Erwartungen zu schätzen. Dies nennt man Q-Function.
 - Baumsuchen sind der Hintergrund von Backtracking in Constraint Satisfaction Problems 
 
+## Problemformulierung
+Ein deterministisches, vollständig observierbares Problme ist definiert durch:
+- eine Ausgangszustand (*initial state:* `s_o element of S`):               *Wo bin ich?*
+- eine "Änderungsfunktion" (*successor function:* `S x A -> S`)             *Wie ändere ich das?*
+- einen Zielzustand (*goal state:* `s_goal element of S`)                   *Wo will ich hin?*
+- eine "Änderungskostenfunktion" (*step cost function:* `cost(s,a,s' > 0`)  *Was kostet mich das?*
+
+Die Lösung ist eine Sequenz von Aktionen von `s_o` zu `s_goal`. Eine optimale Lösung hat die kleinste Summe der `pathcosts`.
+
+[Beispiel: Baumsuche](Inhalte/Beispiele/Tree_Cities.md)
+
+Eine **Node** beschreibt einen Knoten in einem Entscheidungsbaum, nicht aber einem Zustand. Eine Node hat `parent, children, depth und pathcost`.
+
+Eine Suchstrategie wird durch die Sortierung der Nodes in der `fringe`, der Liste der abzuarbeitenden Nodes, definiert.
+
+Eine Suchstrategie wird bewertet nach:
+ - **Vollständigkeit**: Finde ich immer eine Lösung? (wenn eine Lösung existiert)
+ - **Zeit-Komplexität**: Wie oft muss ich eine Node expandieren?
+ - **Platz-Komplexität**: Wie groß wird meine fringe maximal?
+ - **Optimalität**: Findet es immer die Lösung mit den geringsten Kosten?
+ 
+Zeit- und Platz-Komplexität werden nach folgenden Kriterien eingestuft: 
+- `b` = maximale Verzweigungszahl einer Node
+- `d` = Tiefe (*depth*) der günstigsten Lösung
+- `m` = maximale Tiefe des Entscheidungsbaums 
+ 
+## Breadth-First Search
+...
+## Depth-First Search
+...
+## Iterative Deepening Search
+...
+## A* Algorythm
+...
+
 <hr>
 
 ## Aus Zusammenfassung
