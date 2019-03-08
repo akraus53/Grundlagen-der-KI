@@ -1,5 +1,12 @@
 # Search
 
+## Motivation
+- Das Konzept von Entscheidungsbäumen ist wichtig für das Verständnis von Entscheidungsproblemen
+- Im Wahrscheinlichkeitsraum sind Baumsuchen ein Spezialfall von Monte-Carlo-Methoden um Erwartungen zu schätzen. Dies nennt man Q-Function.
+- Baumsuchen sind der Hintergrund von Backtracking in Constraint Satisfaction Problems 
+
+<hr>
+
 ## Aus Zusammenfassung
 - Wichtig ist hier die **Tree Search**
 - Unser Entscheidungsprozess ist **deterministisch**, also "unfrei"
