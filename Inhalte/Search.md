@@ -68,7 +68,7 @@ Die Fringe wird nach den geringsten Insgesamtkosten sortiert.
 
 Die Wahl der Heuristik ist sehr wichtig für die Zahl der expandierten Nodes. 
 - Die Heuristik muss immer optimistisch sein, darf die tatsächlichen Kosten vom State zum Ziel also nie unterschreiten. 
-- Mehrere Heuristiken sind möglich
+- Mehrere Heuristiken sind zugelassen, eine zugelassene Heuristik heißt **admissive Heuristic**
 - Eine Heuristik ergibt sich aus einer Vereinfachten Ansicht eines komplizierten Problems
 
 ## Eigenschaften der Suchen:
