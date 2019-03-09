@@ -56,9 +56,9 @@ Den Baum haben wir in der Modellierung ersetzt durch den **Markow Entscheidungsp
 
 - Machine Learning als Spezialfall von graphischen Modellen betrachtet, also als propabilistische Interferenz
 
-$$ P(f|D) = \frac {P(D|f) * P(f)}{P(D)} $$
+`P(f|D) = {P(D|f) * P(f)} / {P(D)} `
 
-- Machine Learning kann genutzt werden um bei Reinforcement Learning die value- oder Q-Funktion zu bestimmen oder ein $P(s'|s,a)$ oder $R(s|a)$ zu lernen
+- Machine Learning kann genutzt werden um bei Reinforcement Learning die value- oder Q-Funktion zu bestimmen oder ein `P(s'|s,a)` oder `R(s|a)` zu lernen
 - Die Gleichungen in einem (2-layer) NN können in der Klausur abgefragt werden.
 
 ## Überblick

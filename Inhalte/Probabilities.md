@@ -20,19 +20,21 @@ Die Umwelt ist oft nicht deterministisch sondern *stochastisch*, auch kann oft n
 
 ## Generelle Wahrscheinlichkeitsrechnung
 
-- Domain $\Omega$ = z.b. $\{1,2,3,4,5,6\}$
-- Probability $P(A \in \Omega) = [0,1]$
+- Domain `\Omega` = z.b. `\{1,2,3,4,5,6\}`
+- Probability `P(A \in \Omega) = [0,1]`
 - Axiome
   - P nicht negativ
-  - Additivität: $P(A) \cup P(B) = P(A) + P(B)$ wenn $A \cap B = \{\}$
-  - Normalisation: $P(\Omega) = 1$
+  - Additivität: `P(A) \cup P(B) = P(A) + P(B)` wenn `A \cap B = \{\}`
+  - Normalisation: `P(\Omega) = 1`
 
 - Implikationen:
-  - $0 <= P(A) <= 1$
-  - $P(${ }$) = 0$
-  - $ A \subset  B \implies P(A) < P(B)$
-  - $P(\Omega /A) = 1 - P(A)$
+  - `0 <= P(A) <= 1`
+  - `P(\{ \}) = 0`
+  - ` A \subset  B \implies P(A) < P(B)`
+  - `P(\Omega /A) = 1 - P(A)`
   
+- Zufallsvariablen: für `X`  
+
 ### Prüfungsrelevant ist: 
 
 - Standardpolynomsatz (?)

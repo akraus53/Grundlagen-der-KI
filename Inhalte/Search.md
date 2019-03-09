@@ -16,12 +16,12 @@ einen deterministischen Gegner ersetzt. Dieser Gegner war Min, als wir über Min
 
 Ein deterministisches, vollständig observierbares Problme ist definiert durch:
 
-- eine Ausgangszustand (*initial state:* $s_o \in  S$):               *Wo bin ich?*
-- eine "Änderungsfunktion" (*successor function:* $S \times A \rightarrow S$)             *Wie ändere ich das?*
-- einen Zielzustand (*goal state:* $s_{goal} \in S$)                   *Wo will ich hin?*
-- eine "Änderungskostenfunktion" (*step cost function:* $cost(s,a,s') > 0$)  *Was kostet mich das?*
+- eine Ausgangszustand (*initial state:* `s_o \in  S`):               *Wo bin ich?*
+- eine "Änderungsfunktion" (*successor function:* `S \times A --> S`)             *Wie ändere ich das?*
+- einen Zielzustand (*goal state:* `s_{goal} \in S`)                   *Wo will ich hin?*
+- eine "Änderungskostenfunktion" (*step cost function:* `cost(s,a,s') > 0`)  *Was kostet mich das?*
 
-Die Lösung ist eine Sequenz von Aktionen von $s_o$ zu $s_{goal}$. Eine optimale Lösung hat die kleinste Summe der `pathcosts`.
+Die Lösung ist eine Sequenz von Aktionen von `s_o` zu `s_{goal}`. Eine optimale Lösung hat die kleinste Summe der `pathcosts`.
 
 [Beispiel: Baumsuche](Inhalte/Beispiele/Tree_Cities.md)
 
@@ -54,7 +54,7 @@ Fringe ist eine FIFO queue, neu entdeckte Nodes kommen ans Ende
 
 "Cost-Aware BFS", Fringe ist sortiert nach den Pfadkosten mit den geringsten Kosten zuerst.
 
-*$\rightarrow$ BFS/UCS propagieren den Baum ebenenweise von oben nach unten, die Ergebnisse sind optimal, aber die Komplexität steigt exponentiell*
+*--> BFS/UCS propagieren den Baum ebenenweise von oben nach unten, die Ergebnisse sind optimal, aber die Komplexität steigt exponentiell*
 
 ### Depth-First Search: *LIFO*
 
@@ -69,7 +69,7 @@ Wiederhole DLS mit stetig wachsendem `l` bis das gewünschte Ziel gefunden ist
 
 Logischerweise: Fringe ist ein LIFO stack, neu entdeckte Nodes kommen an den Anfang
 
-*$\rightarrow$  DFS/IDS durchlaufen den Baum radial "von links nach rechts", die Komplexität steigt linear. Nur IDS ist optimal*
+*--> DFS/IDS durchlaufen den Baum radial "von links nach rechts", die Komplexität steigt linear. Nur IDS ist optimal*
 
 ### A* Algorythm: *Sort Fringe by estimated total Cost*
 
@@ -87,10 +87,10 @@ Die Wahl der Heuristik ist sehr wichtig für die Zahl der expandierten Nodes.
 
 Search | **Completeness**   | **Time**  | **Space** | **Optimality**
 :---: | ------------------- | --------- | ------- | ------
-BFS | Yes, is `b` is finite | $b^{d+1}$   | $b^{d+1}$ | Yes, if cost per step is 1
+BFS | Yes, is `b` is finite | `b^{d+1}`   | `b^{d+1}` | Yes, if cost per step is 1
 UCS | Yes, if step cost > 0 | similar   | similar | Yes
-DFS | Yes, if `d` is finite | $b^m$     | $b*m$    | No
-IDS | Yes                   | $b^d$     | $b*d$    | Yes, id cost per step is 1
+DFS | Yes, if `d` is finite | `b^m`     | `b*m`    | No
+IDS | Yes                   | `b^d`     | `b*d`    | Yes, id cost per step is 1
 A*  | Yes, mostly           | exp.      | exp.    | Yes
 
 ### Prüfungsrelevant ist
