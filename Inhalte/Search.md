@@ -30,15 +30,44 @@ Zeit- und Platz-Komplexität werden nach folgenden Kriterien eingestuft:
 - `b` = maximale Verzweigungszahl einer Node
 - `d` = Tiefe (*depth*) der günstigsten Lösung
 - `m` = maximale Tiefe des Entscheidungsbaums 
- 
-## Breadth-First Search
-...
-## Depth-First Search
-...
-## Iterative Deepening Search
-...
-## A* Algorythm
-...
+
+## Suchstrategien
+### Breadth-First Search: *FIFO*
+Expandiere die umexpandierte Node mit der geringsten Tiefe
+
+Fringe ist eine FIFO queue, neu entdeckte Nodes kommen ans Ende
+
+### Uniform Cost Search: *Sort Fringe by Cost so far*
+"Cost-Aware BFS", Fringe ist sortiert nach den Pfadkosten mit den geringsten Kosten zuerst.
+
+*--> BFS/UCS propagieren den Baum ebenenweise von oben nach unten, die Ergebnisse sind optimal, aber die Komplexität steigt exponentiell*
+
+### Depth-First Search: *LIFO*
+Expandiere die umexpandierte Node mit der höchsten Tiefe
+
+Fringe ist ein LIFO stack, neu entdeckte Nodes kommen an den Anfang
+
+### Iterative Deepening Search: *Repeat DFS for increasing depths*
+Zuerst: Depth limited Search - DFS mit beschränkter Tiefe `l`
+Wiederhole DLS mit stetig wachsendem `l` bis das gewünschte Ziel gefunden ist
+
+Logischerweise: Fringe ist ein LIFO stack, neu entdeckte Nodes kommen an den Anfang
+
+*--> DFS/IDS durchlaufen den Baum radial "von links nach rechts", die Komplexität steigt linear. Nur IDS ist optimal*
+
+
+### A* Algorythm: *Sort Fringe by estimated total Cost*
+
+
+
+## Eigenschaften der Suchen:
+Search | **Completeness**   | **Time**  | **Space** | **Optimality**
+---: | -------------------- | --------- | ------- | ------ 
+BFS | Yes, is `b` is finite | `b^d+1`   | `b^d+1` | Yes, if cost per step is 1 
+UCS | Yes, if step cost > 0 | ähnlich   | ähnlich | Yes
+DFS | Yes, if `d` is finite | `b^m`     | `bm`    | No
+IDS | Yes                   | `b^d`     | `bd`    | Yes, id cost per step is 1
+
 
 <hr>
 
@@ -53,3 +82,18 @@ einen deterministischen Gegner ersetzt. Dieser Gegner war Min, als wir über Min
 - Die Komplexitäten der Algorythmen kennen 
 - Wissen, was eine **admissive heuristic** ist
 - Bei gegebener Funktion angeben, ob es sich um eine admissive heuristic handelt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
