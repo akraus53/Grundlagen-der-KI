@@ -1,5 +1,10 @@
 # Search
 
+## Generelles
+- Unser Entscheidungsprozess ist **deterministisch**, also "unfrei"
+- Projiziert auf ein Spiel ist das Gegenüber/der Gegner nicht deterministisch, daher haben wir ihn durch 
+einen deterministischen Gegner ersetzt. Dieser Gegner war Min, als wir über MiniMax geredet haben (der böseste mögliche Gegner).
+
 ## Motivation
 - Das Konzept von Entscheidungsbäumen ist wichtig für das Verständnis von Entscheidungsproblemen
 - Im Wahrscheinlichkeitsraum sind Baumsuchen ein Spezialfall von Monte-Carlo-Methoden um Erwartungen zu schätzen. Dies nennt man Q-Function.
@@ -57,27 +62,26 @@ Logischerweise: Fringe ist ein LIFO stack, neu entdeckte Nodes kommen an den Anf
 
 
 ### A* Algorythm: *Sort Fringe by estimated total Cost*
+Spezialfall von USC: Anstatt der zurückgelegten Pfadkosten `g` wird die Summe `f` aus `g` und den erwarteten Kosten bis zum Ziel `h ` gebildet.
 
+Die Fringe wird nach den geringsten Insgesamtkosten sortiert. 
 
+Die Wahl der Heuristik ist sehr wichtig für die Zahl der expandierten Nodes. 
+- Die Heuristik muss immer optimistisch sein, darf die tatsächlichen Kosten vom State zum Ziel also nie unterschreiten. 
+- Mehrere Heuristiken sind möglich
+- Eine Heuristik ergibt sich aus einer Vereinfachten Ansicht eines komplizierten Problems
 
 ## Eigenschaften der Suchen:
 Search | **Completeness**   | **Time**  | **Space** | **Optimality**
----: | -------------------- | --------- | ------- | ------ 
+:-.-: | ------------------- | --------- | ------- | ------ 
 BFS | Yes, is `b` is finite | `b^d+1`   | `b^d+1` | Yes, if cost per step is 1 
-UCS | Yes, if step cost > 0 | ähnlich   | ähnlich | Yes
+UCS | Yes, if step cost > 0 | similar   | similar | Yes
 DFS | Yes, if `d` is finite | `b^m`     | `bm`    | No
 IDS | Yes                   | `b^d`     | `bd`    | Yes, id cost per step is 1
+A*  | Yes, mostly           | exp.      | exp.    | Yes
 
 
-<hr>
-
-## Aus Zusammenfassung
-- Wichtig ist hier die **Tree Search**
-- Unser Entscheidungsprozess ist **deterministisch**, also "unfrei"
-- Projiziert auf ein Spiel ist das Gegenüber/der Gegner nicht deterministisch, daher haben wir ihn durch 
-einen deterministischen Gegner ersetzt. Dieser Gegner war Min, als wir über MiniMax geredet haben (der böseste mögliche Gegner). 
-
-### Breitensuche/Tiefensuche/iter.Tiefensuche/A*
+### Prüfungsrelevant ist:
 - Wissen, was die Algorythmen machen und in der Lage sein, sie im Kopf durchzugehen
 - Die Komplexitäten der Algorythmen kennen 
 - Wissen, was eine **admissive heuristic** ist
