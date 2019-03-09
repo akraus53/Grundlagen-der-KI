@@ -73,7 +73,7 @@ Die Wahl der Heuristik ist sehr wichtig für die Zahl der expandierten Nodes.
 
 ## Eigenschaften der Suchen:
 Search | **Completeness**   | **Time**  | **Space** | **Optimality**
-:-.-: | ------------------- | --------- | ------- | ------ 
+:---: | ------------------- | --------- | ------- | ------ 
 BFS | Yes, is `b` is finite | `b^d+1`   | `b^d+1` | Yes, if cost per step is 1 
 UCS | Yes, if step cost > 0 | similar   | similar | Yes
 DFS | Yes, if `d` is finite | `b^m`     | `bm`    | No
