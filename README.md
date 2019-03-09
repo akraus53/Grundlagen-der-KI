@@ -16,3 +16,5 @@ ____    __    ____  __  .______
 3. [Propabilities](Inhalte/Propabilities.md)
 
 
+## Verweise
+Sehr gute (Englische und teils Chinesische) Zusammenfassung: [Danke Mebusy!](https://github.com/mebusy/notes/blob/master/dev_notes/AI_CS188.md)
