@@ -1,6 +1,8 @@
 # Grundlagen der KI
 
-Dies ist eine Zusammenfassung der Vorlesung "Grundlagen der Künstlichen Intelligenz", gelesen von M. Toussaint, an der Uni Stuttgart
+Dies ist eine Zusammenfassung der Vorlesung "Grundlagen der Künstlichen Intelligenz", gelesen von M. Toussaint, an der Uni Stuttgart.
+
+**Hinweis:** Leider werden die KaTex Ausdrücke nicht schön gerendered, ich werde mich aber erst nach der Klausur (aus eigener Interesse) um dieses Problem kümmern. Bis dahin erwarte ich vom Leser, dass man in der Lage ist, PseudoLatex zu lesen.
 
 ```default
 ____    __    ____  __   ______

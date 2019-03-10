@@ -31,7 +31,7 @@ Den Baum haben wir in der Modellierung ersetzt durch den **Markow Entscheidungsp
 
 *Der Agent, der eine Entscheidung treffen soll hat keine Ahnung von der Umwelt, er kann nur mit der Blackbox interagieren. Die Blackbox gibt nur einen Reward für die Aktion aus.*
 
-*Es ist eine stochastische Variante von dynamischem Programmieren*
+*Es ist eine stochastische Variante von dynamischem Programmieren.*
 
 ### Constraint Satisfaction Problem
 
