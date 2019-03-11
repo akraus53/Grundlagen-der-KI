@@ -16,7 +16,7 @@ Anmerkung: Die Grenzen zu [Dynamic Programming](Dynamic.md) verschwimmen.
 
 Reinforcement Learning bedeutet es, zu lernen, in einer unbekannten Umgebung möglichst gut zu performen, also die Umwelt kennen zu lernen und möglichst hohe Rewards zu bekommen.
 
-Es geht weiterhin um [MDPs](Dynamic.md#MarkovEntscheidungsprozesse).
+Es geht weiterhin um [MDPs](Dynamic.md#Markov-Entscheidungsprozesse).
 
 ## Lernen in MDPs
 
@@ -34,8 +34,33 @@ Was können wir hieraus lernen?
   - Schätze den "Policy Gradient"
   - Oder: Nutze die Black Box
 
+## Q-Learning
+
+Bei Q-Learning wird gegenüber der Q-Funktion der `TD`-Error (Temporal Difference) kompensiert:
+
+Q-Funktion: `Q*(s,a) = R(s,a) + \gamma \sum{s'} P(s'|s,a) max{a'} Q*(s',a')`
+
+Q-Learning: `Q_new(s,a) = Q_old(s,a) + \alpha [r + \gamma max{a'} Q_old(s',a') - Q_old(s,a)]`
+
+Reinforcement:
+
+- wenn man mehr Reward bekommt als erwartet, erhöht sich `Q(s,a)`
+- wenn man weniger Reward bekommt als erwartet, sinkt `Q(s,a)`
+
+Q-Learning wird wiederholt, bis man mit dem Ergebnis zufrieden ist.
+
+### Epsilon-greedy action selection
+
+Hier wird nicht wie bisher die Aktion mit der höchsten Value gewählt, sondern manchmal (mit der Wahrscheinlichkeit `\epsilon`) eine zufällige Aktion.
+
+## Exploration
+
+### Epsilon-greedy Exploration
+
+Hier wird mit `\Epsilon`-G-A-S eine Aktion ausgewählt, um zufällig auch andere Aktionen zu erforschen 
+
 ## Klausurrelevant ist
 
-- "Konzeptionell ist das Wichtigste überhaupt bei Reinforcement Learning, dass man die Grundlage von Reinforcement Learning versteht: Dass man Q-Learning ableiten kann durch eine stochastische Varianz und dynamisches Normieren, und das impliziert auch den Konvergenzbeweis von Q-Learning" --> kann aber in der Klausur nicht getestet werden.
+- "Konzeptionell ist das Wichtigste überhaupt bei Reinforcement Learning, dass man die Grundlage von Reinforcement Learning versteht: Dass man Q-Learning ableiten kann durch eine stochastische Varianz und dynamisches Normieren
 - "Ein Agent läuft in der Welt rum, wie oft müsste er zufällig bis zum Ziel kommen bis er am Start eine Value != 0 hat (einfacher als in Übung)
 - Epsilon-greedy Exploration sollte man wissen
