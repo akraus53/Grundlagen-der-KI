@@ -17,10 +17,19 @@ ____    __    ____  __   ______
 
 [Zusammenfassung](Inhalte/Zusammenfassung.md)
 
+Themenbereiche:
+
 1. [Einführung](Inhalte/Einfuehrung.md)
 2. [Search](Inhalte/Search.md)
 3. [Probabilities](Inhalte/Probabilities.md)
+4. [Bandits, MCTS & Games](Inhalte/Bandits.md)
+5. [Dynamic Programming](Inhalte/Dynamic.md)
+
 
 ## Verweise
 
-Sehr gute (Englische und teils Chinesische) Zusammenfassung: [Danke Mebusy!](https://github.com/mebusy/notes/blob/master/dev_notes/AI_CS188.md)
+Sehr gute (englische und teils chinesische) Zusammenfassung:
+- [Mebusy AI_CS188](https://github.com/mebusy/notes/blob/master/dev_notes/AI_CS188.md)
+- [Mebusy AI_CS188_MDP](https://github.com/mebusy/notes/blob/master/dev_notes/AI_CS188_MDP.md)
+
+Thanks [@mebusy](https://github.com/mebusy/)!

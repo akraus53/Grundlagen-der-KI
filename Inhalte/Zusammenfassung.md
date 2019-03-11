@@ -17,7 +17,7 @@ Im Zweiten Teil der Vorlesung haben wir das propabilistisch analysiert
 
 - Wir haben genau das gleiche gemacht wie bei den Entscheidungsprozessen, nur im Propabilistischen.
 - Die propabilistischen Formulierungen, die dabei rauskamen, waren (defakte? #TODO: nachschauen!) Entscheidungen
-- Markow Entsvcheidungsprozesse (MDPs)
+- Markow Entscheidungsprozesse (MDPs)
 - Eine bestimmte Entscheidung läuft beim deterministischen einen bestimmten Pfad den Baum herunter.
 Den Baum haben wir in der Modellierung ersetzt durch den **Markow Entscheidungsprozess**, durch diesen propabilistischen Prozess.
 - Das heißt bezüglich der Algorythmik, dass eine Baumsuche durch dynamisches Progammieren ersetzt wurde.

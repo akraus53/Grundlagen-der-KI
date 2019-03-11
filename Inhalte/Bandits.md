@@ -77,9 +77,55 @@ Generell wird bei Monte Carlo Simulationen eine große Zahl an zufälligen "Samp
 
 Beispiel: Wie groß sind die Chancen, bei einem Kartenspiel zu gewinnen? Statt alles auszurechnen, werden viele zufällige Spiele durchgerechnet und die Gewinne gezählt.
 
+### Flat Monte Carlo
 
+Das Ziel von MCTS ist es, den Nutzen (zum Beispiel der Payoff `\Delta`) einer Aktion in einem Zustand einzuschätzen: `Q(s_o, a) = E{\Delta | s_o, a}`
 
-## Prüfungsrelevant ist
+Flat Monte Carlo macht hierbei zufällige Rollouts (mit einer `RolloutPolicy`), wobei MCTS sich auf vielversprechende Pfade konzentriert.
+
+#### Genereller Aufbau
+
+``` default
+start tree V = {v_o}
+
+while ("time left") do
+  v_t = TreePolicy chooses and creates a now leaf of V
+  append v_t to V
+  \Delta = RolloutPolicy(V) rolls out a full Sim. with reward \Delta
+  Backup(v_t, \Delta) update all parents values
+end while
+return best child of v_0
+```
+
+- Alternativ können auch nur ein paar Schritte, nicht alles mit einem Rollout gemacht werden. Dann muss eine Heuristik zur Evaluation verwendet werden. 
+- Der Baum wächst ungleichmäßig.
+- Die TreePolicy wählt aus, wo der Baum erweitert wird.
+- Die RolloutPolicy wird verwendet um einen Rollout zu Simulieren. Dieser ist meist zufällig.
+
+### Upper Confidence Tree (UCT)
+
+- UCT verwendet UCB um die TreePolicy zu verwirklichen.
+- Backup updated alle Eltern: `n(v) +=1`, `Q(v) += \Delta`
+- TreePolicy wählt ganz normal mit UCB die nächste Node aus
+
+## Games
+
+### MinMax
+
+- Funktioniert bei deterministischen perfect-information games wie Schach oder Tic-Tac-Toe
+- Wähle den Zug, der dem bösesten Gegner die geringste Chance gibt
+- Wähle dementsprechend nicht den Zug, der die höchsten Erträge gibt.
+
+### `\alpha-\beta` pruning
+
+- Pruning (Zurückschneiden) verrringert die Zahl der Verzweigungen und beschleunigt so die Berechnung
+- Das Ergebnis wird durch Pruning nicht beeinflusst.
+
+### UCT for Games
+
+- `negamax-Backup`: Bei der Backpropagation das Vorzeichen von `\Delta` in jeder Ebene alternieren.
+
+## Prüfungsrelevant ist vor allem
 
 - Upper Confidence Bounds
 - Monte Carlo Tree Search
