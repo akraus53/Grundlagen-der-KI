@@ -66,8 +66,6 @@ Joint:|`P(X_{1:n})`
 Marginal:| `P(X_1) = \sum {X_2:n} P(X_1:n)`
 Conditional:| `P(X_1|X_2:n) = P(X_1:n) / P(X_2:n)`
 
-
-
 ### Prüfungsrelevant ist
 
 - Standardpolynomsatz (?)
