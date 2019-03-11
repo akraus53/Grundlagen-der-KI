@@ -24,11 +24,14 @@ Themenbereiche:
 3. [Probabilities](Inhalte/Probabilities.md)
 4. [Bandits, MCTS & Games](Inhalte/Bandits.md)
 5. [Dynamic Programming](Inhalte/Dynamic.md)
+6. [Reinforcement Learning](Inhalte/ReinforcementLearning.md)
 
 
+[test](Inhalte/Search.md#Problemformulierung)
 ## Verweise
 
 Sehr gute (englische und teils chinesische) Zusammenfassung:
+
 - [Mebusy AI_CS188](https://github.com/mebusy/notes/blob/master/dev_notes/AI_CS188.md)
 - [Mebusy AI_CS188_MDP](https://github.com/mebusy/notes/blob/master/dev_notes/AI_CS188_MDP.md)
 
