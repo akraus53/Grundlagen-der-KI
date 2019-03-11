@@ -26,8 +26,6 @@ Themenbereiche:
 5. [Dynamic Programming](Inhalte/Dynamic.md)
 6. [Reinforcement Learning](Inhalte/ReinforcementLearning.md)
 
-
-[test](Inhalte/Search.md#Problemformulierung)
 ## Verweise
 
 Sehr gute (englische und teils chinesische) Zusammenfassung:

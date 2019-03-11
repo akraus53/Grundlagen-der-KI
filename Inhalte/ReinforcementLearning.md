@@ -8,9 +8,31 @@ Anmerkung: Die Grenzen zu [Dynamic Programming](Dynamic.md) verschwimmen.
 - Methodisch passiert hierbei folgendes: Aus dynamischem Programmieren mit einem Modell der Welt (Sie nehmen eine Wertefunktion, die Ihnen die optimale Strategie beschreibt. Die Wertefuntion ist rekursiv aufgebaut und sie können zurückiterieren und so die optimale Entscheidung treffen) wird **Q-Learning** oder ältere Formen wie TD-Learning oder SARSA.
 - Es ist wichtig zu verstehen, dass wenn ich ein Modell, das ich kenne, stochastisch mache indem ich es ersetze durch Daten, hierbei Q-Learning herauskommt.
 
-*Der Agent, der eine Entscheidung treffen soll hat keine Ahnung von der Umwelt, er kann nur mit der Blackbox interagieren. Die Blackbox gibt nur einen Reward für die Aktion aus.*
+*Der Agent, der eine Entscheidung treffen soll, hat keine Ahnung von der Umwelt, er kann nur mit der Blackbox interagieren. Die Blackbox gibt nur einen Reward für die Aktion aus.*
 
 *Es ist eine stochastische Variante von dynamischem Programmieren.*
+
+## Motivation
+
+Reinforcement Learning bedeutet es, zu lernen, in einer unbekannten Umgebung möglichst gut zu performen, also die Umwelt kennen zu lernen und möglichst hohe Rewards zu bekommen.
+
+Es geht weiterhin um [MDPs](Dynamic.md#MarkovEntscheidungsprozesse).
+
+## Lernen in MDPs
+
+Bei der Interaktion mit der Umwelt dammelt der Agent Datenblöcke aus `State, Action, immediate Reward,next State`.
+Was können wir hieraus lernen?
+
+- Model-based RL:
+  - Lernen, den nächsten State zu schätzen: `P(s'|s,a)`
+  - Lernen, den immediate Reward zu schätzen: `R(r|s,a)`
+
+- Model-free RL:
+  - Lernen, die Value eines States oder eines State-Action-Paars zu schätzen: `V(s) / Q(s,a)`
+
+- Policy Search:
+  - Schätze den "Policy Gradient"
+  - Oder: Nutze die Black Box
 
 ## Klausurrelevant ist
 
