@@ -57,7 +57,15 @@ Hier wird nicht wie bisher die Aktion mit der höchsten Value gewählt, sondern 
 
 ### Epsilon-greedy Exploration
 
-Hier wird mit `\Epsilon`-G-A-S eine Aktion ausgewählt, um zufällig auch andere Aktionen zu erforschen 
+Hier wird mit `\Epsilon`-G-A-S eine Aktion ausgewählt, um zufällig auch andere Aktionen zu erforschen.
+
+### Optimistic Initialization
+
+Anstatt mit `0` werden alle `Q(s,a)` mit einem Wert höher als `R_max` initialisiert. So wird sichergestellt, "dass ein `Q(s,a)`so lange ausprobiert wird, bis man weiß, dass es nicht gut ist".
+
+### R-MAX
+
+Modell-basiertes RL. Alle Rewards sind `R_max`, wenn sie nicht tatsächlich bekannt sind.
 
 ## Klausurrelevant ist
 

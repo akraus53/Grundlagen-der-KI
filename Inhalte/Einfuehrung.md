@@ -19,6 +19,7 @@
 ## Zusammenfassung: AI behandelt...
 
 - Systeme, die mit der Umwelt interagieren
+
   - Wir unterscheiden zwischen "system" und "environment"
   - Wir betrachten nur einfache Modelle der Interaktion
   - Ein Kernbereich der AI ist die Forschung zur Entwicklung von formalen Modellen zur Interaktion

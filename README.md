@@ -6,9 +6,9 @@ Dies ist eine Zusammenfassung der Vorlesung "Grundlagen der Künstlichen Intelli
 
 ```default
 ____    __    ____  __   ______
-\   \  /  \  /   / |  | |   _  \  
+\   \  /  \  /   / |  | |   _  \
  \   \/    \/   /  |  | |  |_)  |
-  \            /   |  | |   ___/  
+  \            /   |  | |   ___/
    \    /\    /    |  | |  |
     \__/  \__/     |__| | _|
 ```
@@ -25,6 +25,8 @@ Themenbereiche:
 4. [Bandits, MCTS & Games](Inhalte/Bandits.md)
 5. [Dynamic Programming](Inhalte/Dynamic.md)
 6. [Reinforcement Learning](Inhalte/ReinforcementLearning.md)
+7. [Constraint Satisfaction Problems](Inhalte/ConstraintSatisfaction.md)
+8. [Graphical Models](Inhalte/GraphicalModels.md)
 
 ## Verweise
 

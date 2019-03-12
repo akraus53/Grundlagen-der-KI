@@ -4,7 +4,7 @@
 
 - Unser Entscheidungsprozess ist **deterministisch**, also "unfrei"
 - Projiziert auf ein Spiel ist das Gegenüber/der Gegner nicht deterministisch, daher haben wir ihn durch
-einen deterministischen Gegner ersetzt. Dieser Gegner war Min, als wir über MiniMax geredet haben (der böseste mögliche Gegner).
+  einen deterministischen Gegner ersetzt. Dieser Gegner war Min, als wir über MiniMax geredet haben (der böseste mögliche Gegner).
 
 ## Motivation
 
@@ -16,10 +16,10 @@ einen deterministischen Gegner ersetzt. Dieser Gegner war Min, als wir über Min
 
 Ein deterministisches, vollständig observierbares Problme ist definiert durch:
 
-- eine Ausgangszustand (*initial state:* `s_o \in  S`):               *Wo bin ich?*
-- eine "Änderungsfunktion" (*successor function:* `S \times A --> S`)             *Wie ändere ich das?*
-- einen Zielzustand (*goal state:* `s_{goal} \in S`)                   *Wo will ich hin?*
-- eine "Änderungskostenfunktion" (*step cost function:* `cost(s,a,s') > 0`)  *Was kostet mich das?*
+- eine Ausgangszustand (_initial state:_ `s_o \in S`): _Wo bin ich?_
+- eine "Änderungsfunktion" (_successor function:_ `S \times A --> S`) _Wie ändere ich das?_
+- einen Zielzustand (_goal state:_ `s_{goal} \in S`) _Wo will ich hin?_
+- eine "Änderungskostenfunktion" (_step cost function:_ `cost(s,a,s') > 0`) _Was kostet mich das?_
 
 Die Lösung ist eine Sequenz von Aktionen von `s_o` zu `s_{goal}`. Eine optimale Lösung hat die kleinste Summe der `pathcosts`.
 
@@ -39,39 +39,39 @@ Eine Suchstrategie wird bewertet nach:
 Zeit- und Platz-Komplexität werden nach folgenden Kriterien eingestuft:
 
 - `b` = maximale Verzweigungszahl einer Node
-- `d` = Tiefe (*depth*) der günstigsten Lösung
+- `d` = Tiefe (_depth_) der günstigsten Lösung
 - `m` = maximale Tiefe des Entscheidungsbaums
 
 ## Suchstrategien
 
-### Breadth-First Search: *FIFO*
+### Breadth-First Search: _FIFO_
 
 Expandiere die umexpandierte Node mit der geringsten Tiefe
 
 Fringe ist eine FIFO queue, neu entdeckte Nodes kommen ans Ende
 
-### Uniform Cost Search: *Sort Fringe by Cost so far*
+### Uniform Cost Search: _Sort Fringe by Cost so far_
 
 "Cost-Aware BFS", Fringe ist sortiert nach den Pfadkosten mit den geringsten Kosten zuerst.
 
-*--> BFS/UCS propagieren den Baum ebenenweise von oben nach unten, die Ergebnisse sind optimal, aber die Komplexität steigt exponentiell*
+_--> BFS/UCS propagieren den Baum ebenenweise von oben nach unten, die Ergebnisse sind optimal, aber die Komplexität steigt exponentiell_
 
-### Depth-First Search: *LIFO*
+### Depth-First Search: _LIFO_
 
-Expandiere die umexpandierte Node mit der höchsten Tiefe
+Expandiere die umexpandierte Node mit der höchsten Tiefe!
 
 Fringe ist ein LIFO stack, neu entdeckte Nodes kommen an den Anfang
 
-### Iterative Deepening Search: *Repeat DFS for increasing depths*
+### Iterative Deepening Search: _Repeat DFS for increasing depths_
 
 Zuerst: Depth limited Search - DFS mit beschränkter Tiefe `l`
 Wiederhole DLS mit stetig wachsendem `l` bis das gewünschte Ziel gefunden ist
 
 Logischerweise: Fringe ist ein LIFO stack, neu entdeckte Nodes kommen an den Anfang
 
-*--> DFS/IDS durchlaufen den Baum radial "von links nach rechts", die Komplexität steigt linear. Nur IDS ist optimal*
+_--> DFS/IDS durchlaufen den Baum radial "von links nach rechts", die Komplexität steigt linear. Nur IDS ist optimal_
 
-### A* Algorythm: *Sort Fringe by estimated total Cost*
+### A* Algorythm: *Sort Fringe by estimated total Cost\*:
 
 Spezialfall von USC: Anstatt der zurückgelegten Pfadkosten `g` wird die Summe `f` aus `g` und den erwarteten Kosten bis zum Ziel `h` gebildet.
 
@@ -85,13 +85,13 @@ Die Wahl der Heuristik ist sehr wichtig für die Zahl der expandierten Nodes.
 
 ## Eigenschaften der Suchen
 
-Search | **Completeness**   | **Time**  | **Space** | **Optimality**
-:---: | ------------------- | --------- | ------- | ------
-BFS | Yes, is `b` is finite | `b^{d+1}`   | `b^{d+1}` | Yes, if cost per step is 1
-UCS | Yes, if step cost > 0 | similar   | similar | Yes
-DFS | Yes, if `d` is finite | `b^m`     | `b*m`    | No
-IDS | Yes                   | `b^d`     | `b*d`    | Yes, id cost per step is 1
-A*  | Yes, mostly           | exp.      | exp.    | Yes
+| Search | **Completeness**      | **Time ** | **Space** | **Optimality**             |
+| :----: | --------------------- | --------- | --------- | -------------------------- |
+|  BFS   | Yes, is `b` is finite | `b^{d+1}` | `b^{d+1}` | Yes, if cost per step is 1 |
+|  UCS   | Yes, if step cost > 0 | similar   | similar   | Yes                        |
+|  DFS   | Yes, if `d` is finite | `b^m`     | `b*m`     | No                         |
+|  IDS   | Yes                   | `b^d`     | `b*d`     | Yes, id cost per step is 1 |
+|  A\*   | Yes, mostly           | exp.      | exp.      | Yes                        |
 
 ### Prüfungsrelevant ist
 
