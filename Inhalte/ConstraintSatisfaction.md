@@ -25,7 +25,55 @@ Wir behandeln in dieser Vorlesung:
 
 ## Generelles zu CSP
 
--
+CSPs sind keine sequentiellen Probleme
+
+Aufbau:
+
+- Es gibt `n` Variablen `x_i` jeweils mit einer Domain `D_i, x_i \in D_i`
+- Es gibt außerdem `K` Constraints `C_k`, die jeweils erlaubte Kombinationen von manchen der Variablen konfigurieren.
+- Gesucht ist eine Lösung `C = (X_1, ..., X_n)` alle Variablen definiert und alle Constraints erfüllt.
+
+## Constraint Graph
+
+- Zeichne jede Variable als Kreis.
+- Zeichne alle Constraints zwischen den Variablen als Boxen.
+
+## Lösungsansätze
+
+### Sequential Assignment
+
+**"Let's start with the straight-forward, stupid approach, then fix it"**
+
+- Beginne mit allen Variablen unassigned
+- Ordne einer Variable einen erlaubten Wert zu
+- Wenn du durchkommst, ist alles gut, wenn nicht, fange nochmal an.
+
+### Backtracking Sequential Assignment
+
+- Die Pfadzahl wird verringert, indem eine Reihenfolge zur Belegung festgelegt wird.
+
+### Rekursives Backtracking
+
+- Bekommt eine Liste aller bereits zugewiesenen Variablen
+- wähle eine noch nicht zugewiesene variable
+- Probiere alle möglichen Variablen durch, indem du rek. Backtracking durchführst
+- gebe die Variable zurück, wenn "es aufgeht", gebe `failure` zurück, wenn es keine Lösung gibt.
+
+Vergleiche: 4 Queens Ballett
+
+## Heuristiken
+
+| Name                      | Strategie                                                         |
+| ------------------------- | ----------------------------------------------------------------- |
+| Minimum Remaining Values  | choose the variable with the fewest legal values                  |
+| Degree Heuristik          | choose the variable with the most constraints on remaining values |
+| Least constraining values | given variable, choose the least constraining value               |
+| Constraint Propagation    | see below                                                         |
+
+### Constraint Propagation: Rekursiv
+
+- Nach jeder Entscheidung berechnen wir, welche Werte für die Variablen noch möglich sind.
+- So lange wiederholen, bis sich nichts mehr verändert.
 
 ## Prüfungsrelevant ist vor Allem
 

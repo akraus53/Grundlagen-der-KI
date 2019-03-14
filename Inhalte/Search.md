@@ -71,7 +71,7 @@ Logischerweise: Fringe ist ein LIFO stack, neu entdeckte Nodes kommen an den Anf
 
 _--> DFS/IDS durchlaufen den Baum radial "von links nach rechts", die Komplexität steigt linear. Nur IDS ist optimal_
 
-### A* Algorythm: *Sort Fringe by estimated total Cost\*:
+### A* Algorythm: *Sort Fringe by estimated total Cost\*
 
 Spezialfall von USC: Anstatt der zurückgelegten Pfadkosten `g` wird die Summe `f` aus `g` und den erwarteten Kosten bis zum Ziel `h` gebildet.
 
@@ -85,13 +85,13 @@ Die Wahl der Heuristik ist sehr wichtig für die Zahl der expandierten Nodes.
 
 ## Eigenschaften der Suchen
 
-| Search | **Completeness**      | **Time ** | **Space** | **Optimality**             |
-| :----: | --------------------- | --------- | --------- | -------------------------- |
-|  BFS   | Yes, is `b` is finite | `b^{d+1}` | `b^{d+1}` | Yes, if cost per step is 1 |
-|  UCS   | Yes, if step cost > 0 | similar   | similar   | Yes                        |
-|  DFS   | Yes, if `d` is finite | `b^m`     | `b*m`     | No                         |
-|  IDS   | Yes                   | `b^d`     | `b*d`     | Yes, id cost per step is 1 |
-|  A\*   | Yes, mostly           | exp.      | exp.      | Yes                        |
+| Search | **Completeness**        | **Time ** | **Space** | **Optimality**             |
+| :----: | ----------------------- | --------- | --------- | -------------------------- |
+|  BFS   | Yes, if `b` is finite   | `b^{d+1}` | `b^{d+1}` | Yes, if cost per step is 1 |
+|  UCS   | Yes, if step cost > 0   | similar   | similar   | Yes                        |
+|  DFS   | No, b/c `d` is infinite | `b^m`     | `b*m`     | No                         |
+|  IDS   | Yes                     | `b^d`     | `b*d`     | Yes, id cost per step is 1 |
+|  A\*   | Yes, mostly             | exp.      | exp.      | Yes                        |
 
 ### Prüfungsrelevant ist
 
