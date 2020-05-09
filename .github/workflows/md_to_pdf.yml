@@ -42,7 +42,7 @@ jobs:
 
       - name: convert all files
         run: |
-          $(FILES= find / -regex ".*\.md"
+          $(FILES= find ./ -regex ".*\.md"
           mkdir outputs
           for f in $FILES
           do
