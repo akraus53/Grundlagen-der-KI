@@ -9,6 +9,16 @@ jobs:
     name: Upload Release Asset
     runs-on: ubuntu-latest
     steps:
+      - name: Current Time
+        uses: gerred/current-time@v1.0.0
+      - name: Format time
+        uses: frabert/replace-string-action@master
+        id: format-time
+        with:
+          pattern: '[:\.]+'
+          string: "${{ steps.current-time.outputs.time }}"
+          replace-with: '-'
+          flags: 'g'  
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
@@ -18,7 +28,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release 2 ${{ github.ref }}
+          release_name: Release ${{ steps.format-time.outputs.replaced }}
           draft: false
           prerelease: false
       - name: Convert project # This would actually build your project, using zip for an example artifact
