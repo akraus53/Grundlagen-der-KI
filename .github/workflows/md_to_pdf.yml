@@ -9,7 +9,4 @@ jobs:
       - run: echo "foo" > input.txt  # create an example file
       - uses: docker://pandoc/core:2.9
         with:
-          args: |  # allows you to break string into multiple lines
-            --standalone
-            --output=README.pdf
-            README.md
+          args: --standalone --output=input.pdf input.txt
