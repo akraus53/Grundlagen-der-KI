@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Current Time
-        uses: gerred/current-time@v1.0.0
+        uses: ajilraju/action-date@v0.0.1
+        with:
+          args: date "+%Y-%m-%d %T"
       - name: Use current time
         env:
           TIME: "${{ steps.current-time.outputs.time }}"
