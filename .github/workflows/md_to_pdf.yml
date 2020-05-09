@@ -12,8 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build project # This would actually build your project, using zip for an example artifact
-        run: |
-          pandoc --output=README.pdf README.md # zip --junk-paths my-artifact README.md
+        run: | # zip --junk-paths my-artifact README.md
+          pandoc --output=README.pdf README.md 
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
