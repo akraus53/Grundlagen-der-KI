@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Convert project # This would actually build your project, using zip for an example artifact
-        uses: docker://pandoc/core:2.9
+        uses: docker://pandoc/latex:2.9
         with:
           args: --standalone --output=README.pdf README.md
       - name: Create Release
