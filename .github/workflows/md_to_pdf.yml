@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Current Time
         uses: gerred/current-time@v1.0.0
+      - name: Use current time
+        env:
+          TIME: "${{ steps.current-time.outputs.time }}"
+        run: echo $TIME
       - name: Format time
         uses: frabert/replace-string-action@master
         id: format-time
@@ -27,8 +31,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: rel_${{ steps.current-time.outputs.time }}
-          release_name: PDF Versions on ${{ steps.current-time.outputs.time }}
+          tag_name: rel_${{ steps.format-time.outputs.replaced }}
+          release_name: PDF Versions on ${{ steps.current-time.outputs.replaced }}
           draft: false
           prerelease: false
       - name: Convert project # This would actually build your project, using zip for an example artifact
