@@ -42,7 +42,7 @@ jobs:
       - name: convert all files
         run: |
           echo "::set-env name=FILELIST::$(printf '"%s" ' find / -regex ".*\.\md" )"
-          $(FILES= find / -regex ".*\.\md
+          $(FILES= find / -regex ".*\.\md"
           for f in $FILES
           do
             # extension="${f##*.}"
