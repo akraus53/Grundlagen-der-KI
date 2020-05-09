@@ -42,14 +42,14 @@ jobs:
 
       - name: convert all files
         run: |
-          $(FILES= find ./ -regex ".*\.md"
+          $(FILES= sudo find ./ -regex ".*\.md"
           mkdir outputs
           for f in $FILES
           do
             # extension="${f##*.}"
             filename="${f%.*}"
             echo "Converting $f to $filename.pdf"
-            `pandoc $f -t pdf -o ./outputs/$filename.pdf`
+            `sudo pandoc $f -t pdf -o ./outputs/$filename.pdf`
             # uncomment this line to delete the source file.
             # rm $f
           done)
