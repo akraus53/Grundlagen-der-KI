@@ -27,8 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: rel_${{ steps.format-time.outputs.replaced }}
-          release_name: PDF Versions on ${{ steps.format-time.outputs.replaced }}
+          tag_name: rel_${{ steps.current-time.outputs.time }}
+          release_name: PDF Versions on ${{ steps.current-time.outputs.time }}
           draft: false
           prerelease: false
       - name: Convert project # This would actually build your project, using zip for an example artifact
