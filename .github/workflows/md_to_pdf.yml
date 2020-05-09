@@ -1,0 +1,12 @@
+name: Long Usage
+
+on: push
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-18.04
+    steps:  
+      - uses: Ender-events/pandoc@master
+        with:
+          args: '-s -o README.pdf README.md'
+      
