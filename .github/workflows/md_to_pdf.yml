@@ -43,15 +43,13 @@ jobs:
       - name: convert all files
         run: |
           $(FILES= sudo find ./ -regex ".*\.md"
-          mkdir outputs
+          sudo mkdir ./outputs
           for f in $FILES
           do
             # extension="${f##*.}"
             filename="${f%.*}"
             echo "Converting $f to $filename.pdf"
             `sudo pandoc $f -t pdf -o ./outputs/$filename.pdf`
-            # uncomment this line to delete the source file.
-            # rm $f
           done)
       - name: Convert project # This would actually build your project, using zip for an example artifact
         uses: docker://pandoc/latex:2.9
