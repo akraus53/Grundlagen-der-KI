@@ -6,9 +6,6 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:  
-      - uses: docker://pandoc/core:2.9
-        with:
-          args: '-s -o README.pdf README.md'
       - uses: maxheld83/pandoc@v0.1.0
         with:
           env: OUT_DIR = "public"
