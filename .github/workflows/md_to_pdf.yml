@@ -5,11 +5,11 @@ on: push
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
-    steps:  
-      - uses: maxheld83/pandoc@v0.1.0
+    steps:
+      - run: echo "foo" > input.txt  # create an example file
+      - uses: docker://pandoc/core:2.9
         with:
-          env: OUT_DIR = "public"
-          args: |
+          args: |  # allows you to break string into multiple lines
             --standalone
-            --output=public/index.html
-            ~/README.md
+            --output=README.pdf
+            README.md
