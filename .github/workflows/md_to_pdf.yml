@@ -9,4 +9,10 @@ jobs:
       - uses: docker://pandoc/core:2.9
         with:
           args: '-s -o README.pdf README.md'
-      
+      - uses: maxheld83/pandoc@v0.1.0
+        with:
+          env: OUT_DIR = "public"
+          args: |
+            --standalone
+            --output=public/index.html
+            README.md
