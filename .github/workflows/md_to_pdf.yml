@@ -39,7 +39,8 @@ jobs:
           prerelease: false
       - name: install pandoc
         uses: docker://pandoc/latex:2.9
-
+      - name: test pandoc
+        run: pandoc -s -o README.pdf README.md
       - name: convert all files
         run: |
           $(FILES= sudo find ./ -regex ".*\.md"
