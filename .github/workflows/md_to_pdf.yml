@@ -19,7 +19,7 @@ jobs:
           # Regular expression pattern
           pattern: /[ :]/
           # The input string
-          string: ${{env.CURRENTDATE}}
+          string: "${{env.CURRENTDATE}}"
           # What to replace with
           replace-with: "_"
           # Flags to use when matching
