@@ -12,7 +12,18 @@ jobs:
       - name: get system date
         run: |
           echo "::set-env name=CURRENTDATE::$(date)"
-
+      - name: Replace Spaces with _
+        id: regex
+        uses: frabert/replace-string-action@v1.1
+        with:
+          # Regular expression pattern
+          pattern: /[ :]/
+          # The input string
+          string: ${{env.CURRENTDATE}}
+          # What to replace with
+          replace-with: "_"
+          # Flags to use when matching
+          flags: g # optional
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
@@ -21,8 +32,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{env.CURRENTDATE}}
-          release_name: PDF Versions
+          tag_name: ${{steps.regex.outputs.replaced}}
+          release_name: PDF Versions on ${{env.CURRENTDATE}}
           draft: false
           prerelease: false
       - name: Convert project # This would actually build your project, using zip for an example artifact
