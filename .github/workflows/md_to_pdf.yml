@@ -18,7 +18,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          release_name: Release 2 ${{ github.ref }}
           draft: false
           prerelease: false
       - name: Convert project # This would actually build your project, using zip for an example artifact
