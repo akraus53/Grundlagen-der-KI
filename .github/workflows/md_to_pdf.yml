@@ -15,4 +15,4 @@ jobs:
           args: |
             --standalone
             --output=public/index.html
-            ./README.md
+            ~/README.md
