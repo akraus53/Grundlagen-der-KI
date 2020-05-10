@@ -43,14 +43,14 @@ jobs:
               # the above command will store 'home.md' as 'home' to variable 'pdf_file'
               # hence '$html_file.pdf' equal to 'home.pdf'
 
-              pandoc -s -V margin=30mm -o $pdf_file.pdf $file 
+              pandoc -s -V margin=10mm -o $pdf_file.pdf $file 
               rm $file
           done <  filelist.dat
           # with while loop read each line from the file. Here each line is a locatin of .md file 
 
           rm filelist.dat
           #delete the temporary file finally
-          zip pdfs.zip -r ./ -x .git/* .github/*
+          zip pdfs.zip -r ./ -x "./.git/*" "./.github/*" "./pdf"
   
       - name: Create Release
         id: create_release
