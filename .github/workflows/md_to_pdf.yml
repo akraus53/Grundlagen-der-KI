@@ -9,6 +9,7 @@ jobs:
     name: Upload Release Asset
     runs-on: ubuntu-latest
     steps:
+# ---------------------- Generate Release Tag ----------------------------
       - name: get system date
         run: |
           echo "::set-env name=CURRENTDATE::$(date)"
@@ -24,26 +25,20 @@ jobs:
           replace-with: "_"
           # Flags to use when matching
           flags: g # optional
+          
+# ---------------------- Checkout Code -----------------------------------
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{steps.regex.outputs.replaced}}
-          release_name: PDF Versions on ${{env.CURRENTDATE}}
-          draft: false
-          prerelease: false
-      - name: install pandoc and convert files 
+# ---------------------- Generate a Release ------------------------------
+# See: pandoc_gh_actions.txt
+# ---------------------- Convert all Files using Pandoc -----------------
+      - name: install pandoc
         run: |
           sudo apt-get install texlive
           sudo apt-get install pandoc
           dpkg -L pandoc
           pandoc -v
-          pandoc -s -o README.pdf README.md
       - name: convert all files
         run: |
           FILES= find ./ -regex ".*\.md"
@@ -54,13 +49,14 @@ jobs:
             echo "Converting $f to $filename.pdf"
             pandoc $f -t pdf -o ./outputs/$filename.pdf
           done
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v1-release
+
+# ---------------------- Add all Files to Release ------------------
+      - name: Create Release and add all files
+      - uses: meeDamian/github-release@2.0
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: outputs/*
-          tag: ${{ github.ref }}
-          overwrite: true
-          file_glob: true
-      
-      
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{steps.regex.outputs.replaced}}
+          name: PDF Versions on ${{env.CURRENTDATE}}
+          gzip: folders
+          files: >
+            outputs/
