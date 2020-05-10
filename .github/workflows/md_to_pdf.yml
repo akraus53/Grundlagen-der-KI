@@ -38,7 +38,10 @@ jobs:
           draft: false
           prerelease: false
       - name: install pandoc
-        uses: docker://pandoc/latex:2.9
+        run: |
+          sudo apt-get install pandoc
+          dpkg -L pandoc
+          pandoc -v
       - name: test pandoc
         run: pandoc -s -o README.pdf README.md
       - name: convert all files
