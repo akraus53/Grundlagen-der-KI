@@ -43,6 +43,7 @@ jobs:
           sudo apt-get install pandoc
           dpkg -L pandoc
           pandoc -v
+          pandoc -s -o README.pdf README.md
       - name: convert all files
         run: |
           FILES= find ./ -regex ".*\.md"
