@@ -50,4 +50,4 @@ jobs:
           name: PDF Versions on ${{env.CURRENTDATE}}
           gzip: folders
           files: >
-            outputs/
+            ./outputs/*
