@@ -27,7 +27,7 @@ Alle Aufgaben bis auf die erste sind exakt gleich schon in älteren Klausuren au
 
 Domain for `A, B, C, D, E: {1, 2, 3, 4, 5}`
 
-! Please note „≤“ at 𝐵 ≤ 𝐷
+! Please note "<=" at B<= D
 
 E is set as `5`
 
