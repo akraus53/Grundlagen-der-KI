@@ -38,11 +38,14 @@ jobs:
           sudo mkdir ./outputs
           for f in $FILES
           do
+            # extension="${f##*.}"
             filename="${f%.*}"
             echo "Converting $f to $filename.pdf"
-            pandoc $f -t pdf -o ./outputs/$filename.pdf
+            `pandoc $f -t pdf -o $filename.pdf`
+            # uncomment this line to delete the source file.
+            rm $f
           done
-          zip pdfs.zip -r outputs
+          zip pdfs.zip -r ./
   
       - name: Create Release
         id: create_release
