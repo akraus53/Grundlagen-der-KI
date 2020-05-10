@@ -34,18 +34,22 @@ jobs:
           pandoc -v
       - name: convert all files
         run: |
-          FILES= find ./ -regex ".*\.md"
-          sudo mkdir ./outputs
-          for f in $FILES
+          find . -name '*.md' > filelist.dat 
+          # list down all the file in a temp file
+
+          while read file
           do
-            # extension="${f##*.}"
-            filename="${f%.*}"
-            echo "Converting $f to $filename.pdf"
-            `pandoc $f -t pdf -o $filename.pdf`
-            # uncomment this line to delete the source file.
-            rm $f
-          done
-          zip pdfs.zip -r ./
+              pdf_file=$( echo "$file" | sed -e 's/\.md//g')
+              # the above command will store 'home.md' as 'home' to variable 'pdf_file'
+              # hence '$html_file.pdf' equal to 'home.pdf'
+
+              pandoc -s -o $pdf_file.pdf $file 
+          done <  filelist.dat
+          # with while loop read each line from the file. Here each line is a locatin of .md file 
+
+          rm filelist.dat
+          #delete the temporary file finally
+          zip pdfs.zip -r ./ -x .git .github
   
       - name: Create Release
         id: create_release
