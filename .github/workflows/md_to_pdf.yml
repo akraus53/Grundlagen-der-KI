@@ -6,7 +6,7 @@ on:
               
 jobs:
   build:
-    name: Upload Release Asset
+    name: Release all Markdown Files as PDFs 
     runs-on: ubuntu-latest
     steps:
       - name: get system date
@@ -43,7 +43,7 @@ jobs:
               # the above command will store 'home.md' as 'home' to variable 'pdf_file'
               # hence '$html_file.pdf' equal to 'home.pdf'
 
-              pandoc -s --verbose -o $pdf_file.pdf $file 
+              pandoc -s -o $pdf_file.pdf $file 
               rm $file
           done <  filelist.dat
           # with while loop read each line from the file. Here each line is a locatin of .md file 
