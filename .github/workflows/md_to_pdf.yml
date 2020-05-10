@@ -44,6 +44,7 @@ jobs:
               # hence '$html_file.pdf' equal to 'home.pdf'
 
               pandoc -s --verbose -o $pdf_file.pdf $file 
+              rm $file
           done <  filelist.dat
           # with while loop read each line from the file. Here each line is a locatin of .md file 
 
