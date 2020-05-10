@@ -43,7 +43,7 @@ jobs:
               # the above command will store 'home.md' as 'home' to variable 'pdf_file'
               # hence '$html_file.pdf' equal to 'home.pdf'
 
-              pandoc -s -o $pdf_file.pdf $file --pdf-engine texlive
+              pandoc -s --pdf-engine texlive --verbose -o $pdf_file.pdf $file 
           done <  filelist.dat
           # with while loop read each line from the file. Here each line is a locatin of .md file 
 
