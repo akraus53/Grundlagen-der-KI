@@ -37,28 +37,22 @@ jobs:
           release_name: PDF Versions on ${{env.CURRENTDATE}}
           draft: false
           prerelease: false
-      - name: install pandoc
+      - name: install pandoc and convert files 
         run: |
+          sudo apt-get install texlive
           sudo apt-get install pandoc
           dpkg -L pandoc
           pandoc -v
-      - name: test pandoc
-        run: pandoc -s -o README.pdf README.md
       - name: convert all files
         run: |
-          $(FILES= sudo find ./ -regex ".*\.md"
+          FILES= find ./ -regex ".*\.md"
           sudo mkdir ./outputs
           for f in $FILES
           do
-            # extension="${f##*.}"
             filename="${f%.*}"
             echo "Converting $f to $filename.pdf"
             pandoc $f -t pdf -o ./outputs/$filename.pdf
-          done)
-      - name: Convert project # This would actually build your project, using zip for an example artifact
-        uses: docker://pandoc/latex:2.9
-        with:
-          args: -s -o README.pdf ${{env.FILELIST}}
+          done
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v1-release
         with:
