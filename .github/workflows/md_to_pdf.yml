@@ -9,7 +9,6 @@ jobs:
     name: Upload Release Asset
     runs-on: ubuntu-latest
     steps:
-        # ---------------------- Generate Release Tag ----------------------------
       - name: get system date
         run: |
           echo "::set-env name=CURRENTDATE::$(date)"
@@ -25,14 +24,8 @@ jobs:
           replace-with: "_"
           # Flags to use when matching
           flags: g # optional
-          
-        # ---------------------- Checkout Code -----------------------------------
       - name: Checkout code
         uses: actions/checkout@v2
-        
-        # ---------------------- Generate a Release ------------------------------
-        # See: pandoc_gh_actions.txt
-        # ---------------------- Convert all Files using Pandoc -----------------
       - name: install pandoc
         run: |
           sudo apt-get install texlive
@@ -49,8 +42,6 @@ jobs:
             echo "Converting $f to $filename.pdf"
             pandoc $f -t pdf -o ./outputs/$filename.pdf
           done
-
-        # ---------------------- Add all Files to Release ------------------
       - name: Create Release and add all files
       - uses: meeDamian/github-release@2.0
         with:
